@@ -63,19 +63,11 @@
 				923D3F651FB86C7D00CE8180 /* AppDelegate.swift */,
 				923D3F781FB86F7A00CE8180 /* ChecklistViewController.swift */,
 				923D3F691FB86C7D00CE8180 /* Main.storyboard */,
-				923D3F771FB86F1F00CE8180 /* Supporting files */,
-			);
-			path = RWChecklist;
-			sourceTree = "<group>";
-		};
-		923D3F771FB86F1F00CE8180 /* Supporting files */ = {
-			isa = PBXGroup;
-			children = (
 				923D3F6C1FB86C7D00CE8180 /* Assets.xcassets */,
 				923D3F6E1FB86C7D00CE8180 /* LaunchScreen.storyboard */,
 				923D3F711FB86C7D00CE8180 /* Info.plist */,
 			);
-			path = "Supporting files";
+			path = RWChecklist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
