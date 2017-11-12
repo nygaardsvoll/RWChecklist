@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  RWChecklist
+//  Checklist
 //
-//  Created by Erik Nygårdsvoll on 12/11/2017.
+//  Created by Erik Nygårdsvoll on 11/11/2017.
 //  Copyright © 2017 Nymain. All rights reserved.
 //
 
