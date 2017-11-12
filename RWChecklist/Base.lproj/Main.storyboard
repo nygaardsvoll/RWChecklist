@@ -12,13 +12,13 @@
         <!--Checklist-->
         <scene sceneID="DPp-8M-IBM">
             <objects>
-                <tableViewController id="eT6-WZ-Esu" sceneMemberID="viewController">
+                <tableViewController id="eT6-WZ-Esu" customClass="ChecklistViewController" customModule="RWChecklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qsj-pO-fJ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="wsM-eR-xxf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="wsM-eR-xxf">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wsM-eR-xxf" id="8i4-CU-Q9J">
@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgK-mF-EPi">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="319" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -42,17 +42,22 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklist" id="POk-Xt-Lzp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IxF-Tz-NMe"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IxF-Tz-NMe">
+                            <connections>
+                                <action selector="addItem:" destination="eT6-WZ-Esu" id="Utp-Ym-9Nm"/>
+                                <segue destination="uMA-uc-qDW" kind="show" id="yya-eV-pdJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzO-ZS-S8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="503.19999999999999" y="87.706146926536732"/>
         </scene>
-        <!--Title-->
+        <!--Add Item-->
         <scene sceneID="rVa-BT-BNq">
             <objects>
-                <tableViewController id="uMA-uc-qDW" sceneMemberID="viewController">
+                <tableViewController id="uMA-uc-qDW" customClass="AddedItemViewController" customModule="RWChecklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ewS-Dv-twc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +77,18 @@
                             <outlet property="delegate" destination="uMA-uc-qDW" id="nek-cp-dMf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="rHn-eh-JbB"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="rHn-eh-JbB">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="pzY-vW-0a0">
+                            <connections>
+                                <action selector="cancel" destination="uMA-uc-qDW" id="igB-0V-bc7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="j58-tb-lFV">
+                            <connections>
+                                <action selector="done" destination="uMA-uc-qDW" id="79f-fh-eFc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNz-xj-baa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
