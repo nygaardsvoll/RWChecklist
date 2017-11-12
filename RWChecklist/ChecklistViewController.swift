@@ -16,8 +16,8 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   
   func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
     
-    items.append(item)
     let newRowIndex = items.count
+    items.append(item)
     let indexPath = IndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
     tableView.insertRows(at: indexPaths, with: .automatic)
@@ -150,10 +150,12 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   }
   
   func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+    let lable = cell.viewWithTag(1001) as! UILabel
+    
     if item.checked {
-      cell.accessoryType = .checkmark
+      lable.text = "√"
     } else {
-      cell.accessoryType = .none
+      lable.text = ""
     }
   }
 }
