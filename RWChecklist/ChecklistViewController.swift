@@ -8,7 +8,15 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
+  
+  func addItemViewControllerDidCancel(_ controller: AddItemViewControllerDelegate) {
+    navigationController?.popViewController(animated: true)
+  }
+  
+  func addItemViewController(_ controller: AddedItemViewController, didFinishAdding item: ChecklistItem) {
+    navigationController?.popViewController(animated: true)
+  }
   
   @IBAction func addItem(_ sender: UIBarButtonItem) {
     

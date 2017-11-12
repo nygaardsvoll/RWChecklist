@@ -78,6 +78,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="uMA-uc-qDW" eventType="editingDidEndOnExit" id="0G3-m3-FCH"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -103,6 +106,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelBarButton" destination="pzY-vW-0a0" id="9pE-q5-4Gh"/>
+                        <outlet property="doneBarButton" destination="j58-tb-lFV" id="luW-v8-hXt"/>
                         <outlet property="textField" destination="MbF-Zd-bBW" id="t5i-aG-Ytp"/>
                     </connections>
                 </tableViewController>
