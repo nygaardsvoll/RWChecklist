@@ -45,7 +45,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IxF-Tz-NMe">
                             <connections>
                                 <action selector="addItem:" destination="eT6-WZ-Esu" id="Utp-Ym-9Nm"/>
-                                <segue destination="uMA-uc-qDW" kind="show" id="yya-eV-pdJ"/>
+                                <segue destination="uMA-uc-qDW" kind="show" identifier="AddItem" id="yya-eV-pdJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -57,7 +57,7 @@
         <!--Add Item-->
         <scene sceneID="rVa-BT-BNq">
             <objects>
-                <tableViewController id="uMA-uc-qDW" customClass="AddedItemViewController" customModule="RWChecklist" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uMA-uc-qDW" customClass="AddItemViewController" customModule="RWChecklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ewS-Dv-twc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
