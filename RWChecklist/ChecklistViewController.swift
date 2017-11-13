@@ -17,12 +17,10 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   
   func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
     let newRowIndex = items.count
-    
-    items.append(item)
-    
     let indexPath = IndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
     
+    items.append(item)
     tableView.insertRows(at: indexPaths, with: .automatic)
     navigationController?.popViewController(animated: true)
   }

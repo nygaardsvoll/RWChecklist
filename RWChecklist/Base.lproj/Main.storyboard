@@ -46,6 +46,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="uMA-uc-qDW" kind="show" trigger="accessoryAction" id="zaM-WC-iJ7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -146,4 +149,7 @@
             <point key="canvasLocation" x="-350" y="88"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yya-eV-pdJ"/>
+    </inferredMetricsTieBreakers>
 </document>
