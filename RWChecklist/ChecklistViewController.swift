@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
   
   func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
@@ -15,11 +16,13 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   }
   
   func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
-    
     let newRowIndex = items.count
+    
     items.append(item)
+    
     let indexPath = IndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
+    
     tableView.insertRows(at: indexPaths, with: .automatic)
     navigationController?.popViewController(animated: true)
   }
@@ -37,10 +40,9 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     ]
     let randomNumber = arc4random_uniform(UInt32(titles.count))
     let title = titles[Int(randomNumber)]
-    
-    
     let newRowIndex = items.count
     let item = ChecklistItem()
+    
     item.text = title
     item.checked = true
     
@@ -48,6 +50,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     
     let indexPath = IndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
+    
     tableView.insertRows(at: indexPaths, with: .automatic)
   }
   
@@ -104,7 +107,6 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     navigationController?.navigationBar.prefersLargeTitles = true
   }
   
@@ -113,7 +115,6 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    
     items.remove(at: indexPath.row)
     let indexPaths = [indexPath]
     tableView.deleteRows(at: indexPaths, with: .automatic)
@@ -128,7 +129,6 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     if let cell = tableView.cellForRow(at: indexPath) {
       let item = items[indexPath.row]
       item.toggleChecked()
-      
       configureCheckmark(for: cell, with: item)
     }
     tableView.deselectRow(at: indexPath, animated: true)
