@@ -47,7 +47,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="uMA-uc-qDW" kind="show" trigger="accessoryAction" id="zaM-WC-iJ7"/>
+                                    <segue destination="uMA-uc-qDW" kind="show" identifier="EditItem" trigger="accessoryAction" id="zaM-WC-iJ7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,7 +114,7 @@
                                 <action selector="cancel" destination="uMA-uc-qDW" id="igB-0V-bc7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="j58-tb-lFV">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="j58-tb-lFV">
                             <connections>
                                 <action selector="done" destination="uMA-uc-qDW" id="79f-fh-eFc"/>
                             </connections>
@@ -150,6 +150,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yya-eV-pdJ"/>
+        <segue reference="zaM-WC-iJ7"/>
     </inferredMetricsTieBreakers>
 </document>
